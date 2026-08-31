@@ -1,0 +1,165 @@
+/* ─── Home Screen ────────────────────────────────────────────── */
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #EEF2F6 0%, #E7ECF2 100%);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.home.ready {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header */
+.home-header {
+  padding: 52px var(--space-6) 0;
+}
+
+.home-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.home-title {
+  font-family: var(--font-head);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: #067A5C;
+  background: var(--success-bg);
+  border: 1px solid rgba(16, 185, 129, 0.18);
+  padding: 5px 12px 5px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+.home-location {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Hero / screening card */
+.home-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: var(--space-6);
+}
+
+.screening-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(165deg, var(--navy-2) 0%, var(--navy) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Soft decorative glow, top-right of the card — purely cosmetic, sits
+   behind the text/button content. */
+.card-glow {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--accent-amber);
+  opacity: 0.28;
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.screening-card > *:not(.card-glow) {
+  position: relative;
+  z-index: 1;
+}
+
+.card-tag {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-dark-2);
+  margin-bottom: var(--space-3);
+}
+
+.card-title {
+  font-family: var(--font-head);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--on-dark);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+
+.card-desc {
+  font-size: var(--text-sm);
+  color: var(--on-dark-2);
+  line-height: 1.5;
+  margin-bottom: var(--space-6);
+}
+
+.btn-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  background: #fff;
+  color: var(--navy);
+  border-radius: var(--radius-full);
+  font-size: var(--text-base);
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-start:active {
+  transform: scale(0.98);
+  background: #E9ECF2;
+}
+
+/* Footer */
+.home-footer {
+  padding: 0 var(--space-6) 40px;
+  text-align: center;
+}
+
+.home-footer p {
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+}
